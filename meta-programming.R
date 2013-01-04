@@ -1,3 +1,7 @@
+## by Gustavo Lacerda, 4 Jan 2013
+## http://www.optimizelife.com
+
+
 ## given the parameter values, make the p,q,r,d functions
 distributionFuns <- function(family,...){ ## '...' contains the parameter-values
   fam <- deparse(substitute(family))  

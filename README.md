@@ -3,7 +3,7 @@ R-helpers
 
 R-helpers is a jumble of functions that I load by default when I start up R (to see how this is done, look at .Rprofile).  I have not packaged them as an R library.  If you see anything that you want to use, just copy the file, and source it.  Some of them require having external libraries installed (which you can see by looking for calls to `library`).  If this still doesn't work, there may be dependencies on other R-helper files, so you might want to copy everything and try again. :-p
 
-I have tried to make the files work independently of each other, and document the functions, but I am sure there are ommissions and bugs.
+I have tried to make the files work independently of each other, and document the functions, but I am sure there are omissions and bugs.
 
 I hope that R-helpers can be useful to other R users.  Here are some highlights:
 

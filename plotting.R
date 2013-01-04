@@ -1,3 +1,7 @@
+## by Gustavo Lacerda, 4 Jan 2013
+## http://www.optimizelife.com
+
+
 ## if this is true, you can call 'points', otherwise need to call 'plot'
 isPlotOpen <- function() (dev.cur()!=1)
 
