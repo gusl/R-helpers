@@ -7,7 +7,7 @@ I have tried to make the files work independently of each other, and document th
 
 I hope that R-helpers can be useful to other R users.  Here are some highlights:
 
-* inspect.R: I expect this will be the most useful function here.  In the process of debugging, it is common for R programmers to write code like: `cat("x = "); print(x)`  but this is repetitive and inflexible.  `inspect` handles objects that can be printed inline (e.g. integers and strings) as well as objects that can't be (e.g. matrices, functions).  Furthermore, we make it easy to turn off all calls to inspect in one go (by setting NO_INSPECT), or to turn on only a subset of inspects (by setting ACTIVE_TAGS).
+* inspect.R: I expect this will be the most useful function here.  In the process of debugging, it is common for R programmers to write code like: `cat("x = "); print(x)`  but this is repetitive and inflexible.  `inspect` handles objects that can be printed inline (e.g. integers and strings) as well as objects that can't be (e.g. matrices, functions).  Furthermore, we make it easy to turn off all calls to inspect in one go (by setting `NO_INSPECT`), or to turn on only a subset of inspects (by setting `ACTIVE_TAGS`).
 
 * plotting.R: `pplot` is useful for debugging when you have overlapping plots.  It figures out when to call `plot` vs `points`.
 
@@ -21,7 +21,7 @@ I hope that R-helpers can be useful to other R users.  Here are some highlights:
 
 
 
-To help you use my functions, I have included some examples behind comments (##), usually right after the function's implementation.
+To help you use my functions, I have included some examples behind comments (`##`), usually right after the function's implementation.
 
 Gustavo Lacerda, 4 Jan 2013
 http://www.optimizelife.com
