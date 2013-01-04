@@ -4,6 +4,19 @@ isPlotOpen <- function() (dev.cur()!=1)
 pplot <- function(...) if (isPlotOpen()) points(...) else plot(...)
 
 
+#########
+## Grids
+#########
+
+## NOTE: makeGrid(0,1,10) is the same seq(0,1,len=11)
+makeGrid <- function(left,right,m) { d <- m/(right-left); ((left*d):(right*d))/d }
+linspace <- makeGrid
+
+makeExpoGrid <- function(left, right, m){
+  exp(makeGrid(log(left), log(right),m))
+}
+
+
 #######################################################################
 ## Scatter plot with confidence interval for the correlation + p-value
 #######################################################################
@@ -27,6 +40,7 @@ plotAndCorTest <- function(V1,V2, corTestMethod="pearson", xlab=NA, ylab=NA, sho
   if(showFit=="lowess") lines(lowess(V1, V2), col=fitColor)
 }
 
+## USAGE: plot the same way you would use plot.
 
 
 ###################
@@ -109,7 +123,6 @@ qpoints <- function(x, y, ...) {
 }
 
 qpolygon <- function(x, y, ...){
-  inspect(REVERSE_PLOT)
   if (REVERSE_PLOT) polygon(y,x, ...)
   else polygon(x,y, ...)
 }

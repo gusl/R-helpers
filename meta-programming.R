@@ -14,6 +14,7 @@ distributionFuns <- function(family,...){ ## '...' contains the parameter-values
   list(pfun=pFun,qfun=qFun,rfun=rFun,dfun=dFun)
 }
 
+## see http://gustavolacerda.livejournal.com/1098595.html
 
 ## distr <- distributionFuns(norm,mean=10,sd=2)
 ## distr$qfun(0.5) ## median, a.k.a. 0.5 quantile
@@ -32,7 +33,7 @@ pasteUnquoted <- function(s1,s2){
   jPaste(deparse(substitute(s1)), deparse(substitute(s2)))
 }
 
-pasteUnquoted(Gus, tavo)
+pasteUnquoted(Hel, lo)
 
 
 ## turns functions that take multiple arguments into functions that take vector-arguments.

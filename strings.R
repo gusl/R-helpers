@@ -41,8 +41,6 @@ levenshteinDist <- function(s,t){
   
   for (j in 2:n){
     for (i in 2:m){
-      ##inspect(c(i,j))
-      ##inspect(c(s[i-1], t[j-1])) ##
       if (s[i-1]==t[j-1]){
         ##print("same")
         d[i,j] <- d[i-1,j-1]
@@ -50,7 +48,6 @@ levenshteinDist <- function(s,t){
         ##print("different")
         d[i,j] <- min(d[i-1,j]+1, d[i,j-1]+1, d[i-1,j-1]+1)
       }
-      ##inspect(d)      
     }
   }
   d[m,n]
@@ -60,6 +57,5 @@ levenshteinDist <- function(s,t){
 levenshteinDistance <- function(s,t){
   if(nchar(s)>1) s <- cz(s)
   if(nchar(t)>1) t <- cz(t)
-  ##inspect(list(s,t))
   levenshteinDist(s,t)
 }
