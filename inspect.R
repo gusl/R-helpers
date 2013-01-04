@@ -10,8 +10,8 @@ ACTIVE_TAGS <- NULL  ## adjust this to see different types/levels of detail
 
 
 inspect <- function(stuff, tags=NULL){ ## if no tags specified, always print
-  intersection <- intersect(ACTIVE_TAGS, tags)
   if (NO_INSPECT) return()
+  intersection <- intersect(ACTIVE_TAGS, tags)
   if (!is.null(tags) && !is.null(ACTIVE_TAGS) && length(intersection)==0) return()
   exprString <- as.character(match.call()[2])
   if (length(stuff)==1 && !is.data.frame(stuff) && !is.function(stuff)) { ##if not a proper
