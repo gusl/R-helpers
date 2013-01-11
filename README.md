@@ -13,6 +13,8 @@ I hope that R-helpers can be useful to other R users.  Here are some highlights:
 
 * plotting.R: There is also some code for generating color functions (i.e. functions from [0,1] to RGB colors) from RColorBrewer palettes as well as pairs of colors.
 
+* plotting.R: There is a function for changing the background color, `colorBackground`.  Must be used before plotting other elements.
+
 * string.R: function to compute the Levenshtein edit distance between two strings or two character vectors.
 
 * meta-programming.R: for any distribution following the R naming convention, `distributionFuns` wraps together the `p`,`q`,`r`,`d` functions (i.e. cdf, quantile, random sample, pdf) as "methods" of a Distribution object.  This is one place in R where a little Object-Orientation would be welcome, and `distributionFuns` is one step in that direction.
