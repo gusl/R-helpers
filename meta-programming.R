@@ -5,10 +5,10 @@
 ## given the parameter values, make the p,q,r,d functions
 distributionFuns <- function(family,...){ ## '...' contains the parameter-values
   fam <- deparse(substitute(family))  
-  pfun <- eval(parse(text=jPaste("p",fam)))
-  qfun <- eval(parse(text=jPaste("q",fam)))
-  rfun <- eval(parse(text=jPaste("r",fam)))
-  dfun <- eval(parse(text=jPaste("d",fam)))
+  pfun <- eval(parse(text=paste0("p",fam)))
+  qfun <- eval(parse(text=paste0("q",fam)))
+  rfun <- eval(parse(text=paste0("r",fam)))
+  dfun <- eval(parse(text=paste0("d",fam)))
   
   pFun <- function(x) pfun(x,...)
   qFun <- function(x) qfun(x,...)
@@ -34,7 +34,7 @@ distributionFuns <- function(family,...){ ## '...' contains the parameter-values
 
 ##returns the name of the variable passed
 pasteUnquoted <- function(s1,s2){
-  jPaste(deparse(substitute(s1)), deparse(substitute(s2)))
+  paste0(deparse(substitute(s1)), deparse(substitute(s2)))
 }
 
 pasteUnquoted(Hel, lo)
@@ -83,13 +83,13 @@ getProperty <- function(dataset, propString){
     if (!(token %in% symbols) && is.na(as.numeric(token)) && !(token %in% ls())){ ## if not a recognized string
       t <- class(try(eval(parse(text=token)), silent=TRUE))
       if (t=="try-error"){
-        replacement[i] <- jPaste(dataset,"$", token)
+        replacement[i] <- paste0(dataset,"$", token)
         next;
       }
     }
     replacement[i] <- token
   }
-  expr <- Reduce(jPaste,replacement)
+  expr <- Reduce(paste0,replacement)
   inspect(expr)
   eval(parse(text=expr))
 }

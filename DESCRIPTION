@@ -1,0 +1,13 @@
+Package: rhelpers
+Version: 0.1
+Date: 
+Title:
+Author: Gustavo Lacerda
+Maintainer: Gustavo Lacerda, gusl@optimizelife.com
+Depends:
+Suggests:
+Description:
+License: MIT License
+URL:
+BugReports:
+Date: Nov 2, 2014

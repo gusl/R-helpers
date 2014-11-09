@@ -38,8 +38,13 @@ find <- function(elt,l){
 ## scientific notation
 form <- function(x) format(x, scientific=TRUE, digits=3)
 
+## Filter, rathtr than ## select <- function(test, v) v[which(test(v))]
+is.odd <- function(n) n%%2 == 1
+Filter(not(is.odd), 1:5)
 
-removeNA <- function(v) select(v, not(is.na))
+## not <- function(test) function(x) !test(x)
+##
+## removeNA <- function(v) Filter(not(is.na), v)
 
 
 ##returns indices

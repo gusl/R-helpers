@@ -1,7 +1,20 @@
+###########
+## NORMS ##
+###########
+L22 <- function(v) sum(v^2)
+L2 <- function(v) sqrt(sum(v^2))
+L1 <- function(v) sum(abs(v))
+
+sqfrob <- function(M) L22(M)
+
+normalize.L2 <- function(v) v/L2(v)
+
+normalize <- function(v) v/sum(v)
+
 ##################
 ## LOGICAL      ##
 ##################
-                 
+
 vectorEquals <- function(v1,v2) {
   ifelse(length(v1)==1, v1==v2, all(v1==v2))
 }
@@ -22,7 +35,6 @@ matpower <- function(M,n){
 
 prinLeftEigenvector <- function(M) eigen(t(M))$vectors[,1]
 
-normalize <- function(v) v/sum(v)
 
 isStochastic <- function(mat) vectorEquals(apply(mat,1,sum), rep(1,nrow(mat)))
 
@@ -65,7 +77,7 @@ all2Partitions <- function(s){
   n <- length(s)
   if(n<2) return(list())
   if(n==2) return(list(s[1]))
-  
+
   l <- list()
   for(i in 1:floor((n-1)/2)){
     sets <- columns(combn(s,i))
@@ -117,7 +129,7 @@ powerSet <- function(v){
     binaryVector <- rev(convertBinary(i,N=N))
     inspect(binaryVector)
     S[[i]] <- v[which(binaryVector==1)]
-  }  
+  }
   S
 }
 
